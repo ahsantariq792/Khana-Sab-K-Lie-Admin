@@ -1,38 +1,96 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.nav-itms {
+  text-decoration: none !important;
   color: white;
+  justify-content: center;
+  margin-right: 4%;
+  vertical-align: middle;
+  display: flex;
 }
 
-.App-link {
-  color: #61dafb;
+.nav-main {
+  margin: 0% !important;
+  margin-right: 50% !important;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.navbar {
+  background-color: green !important;
+}
+
+.nav-item {
+  font-size: 18px !important;
+  font-weight: 500;
+
+}
+
+.logo {
+  width: 60px;
+  height: 60px;
+  margin: 0% !important;
+}
+
+#dropdown {
+  color: white !important;
+  font-size: 18px !important;
+  margin: 0% !important;
+  font-weight: 500;
+
+}
+
+/* Dashboard Css */
+
+.main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+}
+
+.card {
+  text-align: center;
+
+}
+
+.btn {
+  display: flex;
+  justify-content: center;  
+}
+
+#cardbtnreject {
+  background-color: red !important;
+}
+
+.card-main {
+  width: 500px;
+  margin: 2%;
+  padding: 8px;
+}
+
+
+/* Manager form css */
+
+form .box{
+  margin-right: 5% !important;
+  margin-left: 2% !important;
+  margin-bottom: 2%;
+  width: 90% !important;
+  background-color: white;
+  height: fit-content;
+  border-radius: 10px !important;
+}    
+
+
+.full{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 10%;
+  font-size: 18px;
+}
+
+.ul{
+  padding: 2%;
+}
+
+.loan_buttons{
+  text-align: center;
 }
