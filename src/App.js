@@ -13,19 +13,27 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
+import { userSelect } from './state/User';
+import { useSelector } from 'react-redux';
 
 function App() {
+
+  const user = useSelector(userSelect)
   return (
     <>
       <ResponsiveAppBar />
       <Routes>
-        <Route exact path="dashboard" element={<Dashboard />} />
-        <Route path="addmanager" element={<AddManager />} />
-        <Route path="accepted" element={<AcceptedRequests />} />
-        <Route path="rejected" element={<RejectedRequests />} />
-        <Route path="details" element={<Details />} />
-        <Route path="/" element={<Login />} />
-
+        {!user ?
+          <Route path="/" element={<Login />} />
+          :
+          <>
+            <Route exact path="/" element={<Dashboard />} />
+            <Route path="addmanager" element={<AddManager />} />
+            <Route path="accepted" element={<AcceptedRequests />} />
+            <Route path="rejected" element={<RejectedRequests />} />
+            <Route path="details" element={<Details />} />
+          </>
+        }
       </Routes>
     </>
   );

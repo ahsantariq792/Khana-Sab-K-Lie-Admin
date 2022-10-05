@@ -20,7 +20,7 @@ function DashNavbar() {
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto">
 
-                            <Link to="/dashboard" className="nav-itms">
+                            <Link to="/" className="nav-itms">
                                 <Button color="inherit" className="nav-item">Dashboard</Button>
                             </Link>
 
