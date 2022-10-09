@@ -7,6 +7,8 @@ import { Link } from 'react-router-dom';
 import Logo from '../assets/kahana.png'
 import { useDispatch } from 'react-redux';
 import { login } from '../state/User'
+import axios from 'axios';
+import { baseurl } from '../Core';
 const validationSchema = yup.object({
     email: yup
         .string('Enter your email')
@@ -28,18 +30,37 @@ function Login() {
     const dispatch = useDispatch()
     const submit = (values) => {
         console.log("values", values)
-        dispatch(login({
-            email: values.email,
-            password: values.password,
-        }))
+
+
+        axios.post(`${baseurl}/api/v1/admin/login`,
+        {
+          email: values.email,
+          password: values.password
+        }, {
+        withCredentials: true
+      })
+        .then(res => {
+          console.log(res.data);
+          if (res.data.email) {
+            dispatch(login({
+                email: values.email,
+                password: values.password,
+            }))
+          }
+  
+  
+        })
+        .catch(error => {
+          alert('Incorrect email or password')
+        })
 
     }
 
     const formik = useFormik({
         validationSchema: validationSchema,
         initialValues: {
-            email: '',
-            password: '',
+            email: 'admin@gmail.com',
+            password: 'admin12345678',
 
         },
         onSubmit: submit
